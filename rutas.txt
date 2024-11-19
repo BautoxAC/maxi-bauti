@@ -1,0 +1,20 @@
+AR101;Buenos Aires;Cordoba;695;No
+AR102;Buenos Aires;Mendoza;985;No
+AR103;Cordoba;Rosario;400;No
+AR104;Buenos Aires;Santiago de Chile;1400;Si
+AR105;Buenos Aires;Montevideo;200;Si
+AR106;Rosario;Tucuman;775;No
+AR107;Mendoza;Salta;1050;No
+AR108;Buenos Aires;Lima;3140;Si
+AR109;Buenos Aires;Asuncion;1080;Si
+AR110;Buenos Aires;Sao Paulo;1670;Si
+AR111;Cordoba;NeuquEn;730;No
+AR112;Salta;Jujuy;85;No
+AR113;Buenos Aires;Bariloche;1570;No
+AR114;Buenos Aires;Ushuaia;2370;No
+AR115;Cordoba;Buenos Aires;695;No
+AR116;Mendoza;Buenos Aires;985;No
+AR117;Buenos Aires;Bogota;4660;Si
+AR118;Buenos Aires;Rio de Janeiro;2000;Si
+AR119;Buenos Aires;Madrid;10000;Si
+AR120;Buenos Aires;Nueva York;8530;Si

@@ -208,34 +208,42 @@ public class Main {
 
     public static boolean esIdentificacionValida(String identificacion) {
 
-        boolean esValida = false;
+        boolean esValida = true;
         int i = 0;
 
-        String[] split = identificacion.split(";");
+        String[] split = identificacion.split("-");
         String parteA = split[0];
         String parteB = split[1].toUpperCase();
 
-        if ((parteA.equals("LV") && (!parteB.equals("X") && !parteB.equals("S"))) || parteA.equals("LQ")) {
-            while (!esValida && i < parteB.length()) {
+        if ((parteA.equals("LV") && (parteB.charAt(0) != 'X' && parteB.charAt(0) != 'S' )) || parteA.equals("LQ")) {
+            while (esValida && i < parteB.length()) {
                 if ((parteB.charAt(i) < 'A') || parteB.charAt(i) > 'Z') {
                     esValida = false;
                 }
                 i++;
             }
+        } else if (parteA.equals("LV") || parteA.equals("LQ")) {
+
+            if (parteB.charAt(1) == 'X') {
+                i = 2;
+            } else {
+                i = 1;
+            }
+
+            while (esValida && i < parteB.length()) {
+                if ((parteB.charAt(i) < '0') || parteB.charAt(i) > '9') {
+                    esValida = false;
+                }
+                i++;
+            }
+
         } else {
 
-            
-
-            while (!esValida && i < parteB.length()) {
-                if ((parteB.charAt(i) < 'A') || parteB.charAt(i) > 'Z') {
-                    esValida = false;
-                }
-                i++;
-            }
+            esValida = false;
 
         }
 
-        return identificacion.matches("LV-[A-Z]{3}|LQ-[A-Z]{3}|LV-X\\d{3}");
+        return esValida;
     }
 
     public static void leerArchivos(String camino) {

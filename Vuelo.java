@@ -1,21 +1,23 @@
 
 public class Vuelo{
     private String id;
-    private String avion;
-    private String ruta;
+    private Avion avion;
+    private Ruta ruta;
     private String dia;
     private String hora;
+    private boolean volo;
 
     //Constructores
-    public Vuelo(String id,String avion,String ruta,String dia,String hora){
+    public Vuelo(String id,Avion avion,Ruta ruta,String dia,String hora){
         this.id=id;
         this.avion=avion;
         this.ruta=ruta;
         this.dia=dia;
         this.hora=hora;
+        volo = false;
     }
     //Observadores
-    public String getAvion() {
+    public Avion getAvion() {
         return avion;
     }
     public String getDia() {
@@ -27,16 +29,20 @@ public class Vuelo{
     public String getId() {
         return id;
     }
-    public String getRuta() {
+    public Ruta getRuta() {
         return ruta;
+    }
+    public boolean getVolo() {
+        return volo;
     }
     
     public String toString(){
         return "ID:"+this.id+
-        "\nAvion:"+this.avion+
-        "\nRuta:"+this.ruta+
+        "\nAvion: "+this.avion.toString()+
+        "\nRuta: "+this.ruta.toString()+
         "\nDia:"+this.dia+
-        "\nHora:"+this.hora;
+        "\nHora:"+this.hora+
+        "\nVolo:"+this.volo;
     }
 
 }

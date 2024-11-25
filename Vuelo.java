@@ -5,7 +5,7 @@ public class Vuelo{
     private Ruta ruta;
     private String dia;
     private String hora;
-    private boolean volo;
+    private boolean realizado;
 
     //Constructores
     public Vuelo(String id,Avion avion,Ruta ruta,String dia,String hora){
@@ -14,7 +14,15 @@ public class Vuelo{
         this.ruta=ruta;
         this.dia=dia;
         this.hora=hora;
-        volo = false;
+        realizado = false;
+    }
+    public Vuelo(String id,Avion avion,Ruta ruta,String dia,String hora,boolean realizado){
+        this.id=id;
+        this.avion=avion;
+        this.ruta=ruta;
+        this.dia=dia;
+        this.hora=hora;
+        this.realizado = realizado;
     }
     //Observadores
     public Avion getAvion() {
@@ -32,8 +40,16 @@ public class Vuelo{
     public Ruta getRuta() {
         return ruta;
     }
-    public boolean getVolo() {
-        return volo;
+    public boolean getRealizado() {
+        return realizado;
+    }
+
+    public void realizarVuelo () {
+        if (realizado == false) {
+            realizado = true;
+            avion.setKmRecorridos(avion.getKmRecorridos() + ruta.getDistancia());
+            avion.incrementarVuelos();
+        }
     }
     
     public String toString(){
@@ -42,7 +58,7 @@ public class Vuelo{
         "\nRuta: "+this.ruta.toString()+
         "\nDia:"+this.dia+
         "\nHora:"+this.hora+
-        "\nVolo:"+this.volo;
+        "\nVolo:"+this.realizado;
     }
 
 }

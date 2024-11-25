@@ -39,6 +39,13 @@ public class Avion {
         return modelo;
     }
 
+    public void setKmRecorridos(int kmRecorridos) {
+        this.kmRecorridos = kmRecorridos;
+    }
+
+    public void incrementarVuelos() {
+        cantVuelos += 1;
+    }
 
     public String toString(){
         return "ID:"+this.id+

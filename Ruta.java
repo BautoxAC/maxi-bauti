@@ -29,6 +29,9 @@ public class Ruta{
     public String getId() {
         return id;
     }
+    public boolean getEsInternacional() {
+        return esInternacional;
+    }
     
     public String toString(){
         return "ID:"+this.id+
